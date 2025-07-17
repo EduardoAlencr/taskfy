@@ -4,7 +4,7 @@ import sqlite3
 def create_db():
     conn = sqlite3.connect('tasks.db')
     conn.execute('''
-        CREATE TABLE tasks (
+        CREATE TABLE IF NOT EXISTS tasks (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL,
             completed BOOLEAN NOT NULL
